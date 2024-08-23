@@ -9,13 +9,17 @@ import (
 )
 
 func main() {
-	if len(os.Args) > 2 {
+	if len(os.Args) > 3 {
 		fmt.Println("too many args")
 		os.Exit(1)
 	}
 	var templateName string = ""
 	if len(os.Args) == 2 {
 		templateName = os.Args[1]
+	}
+	var fileSuffix string = ""
+	if len(os.Args) == 3 {
+		fileSuffix = os.Args[2]
 	}
 	var entriesDir string = "notemplates"
 	if templateName != "" {
@@ -42,7 +46,10 @@ func main() {
 	n := 0
 	var filename string
 	for {
-		filename = fmt.Sprintf("%s-entry-%d.toml", currentDate, n)
+		if fileSuffix != "" {
+			fileSuffix = "-" + fileSuffix
+		}
+		filename = fmt.Sprintf("%s-entry-%d%s.toml", currentDate, n, fileSuffix)
 		fullPath := filepath.Join(entriesDir, filename)
 		if _, err := os.Stat(fullPath); os.IsNotExist(err) {
 			break
