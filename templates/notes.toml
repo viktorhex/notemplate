@@ -1,6 +1,10 @@
 [note]
 author = "1nf053c"
-date = "DATE"
+date = "08/23/2024"
 content = '''
-CONTENT
+I created this entry.go program so I can write and organize my notes faster.
+
+`go run entry.go notes` # => creates an entry under notes/
+
+notes/ is .gitignored for now
 '''
