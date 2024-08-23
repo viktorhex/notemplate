@@ -14,7 +14,7 @@ func main() {
 		os.Exit(1)
 	}
 	var templateName string = ""
-	if len(os.Args) == 2 {
+	if len(os.Args) > 1 && os.Args[1] != "_" {
 		templateName = os.Args[1]
 	}
 	var fileSuffix string = ""
@@ -45,14 +45,19 @@ func main() {
 	currentDate := time.Now().Format("2006-01-02")
 	n := 0
 	var filename string
+	println(fileSuffix)
+	if fileSuffix != "" && fileSuffix != "_" {
+		fileSuffix = "-" + fileSuffix
+	}
 	for {
-		if fileSuffix != "" {
-			fileSuffix = "-" + fileSuffix
-		}
 		filename = fmt.Sprintf("%s-entry-%d%s.toml", currentDate, n, fileSuffix)
+		filenameNosuffix := fmt.Sprintf("%s-entry-%d.toml", currentDate, n)
 		fullPath := filepath.Join(entriesDir, filename)
+		fullPathNosuffix := filepath.Join(entriesDir, filenameNosuffix)
 		if _, err := os.Stat(fullPath); os.IsNotExist(err) {
-			break
+			if _, err := os.Stat(fullPathNosuffix); os.IsNotExist(err) {
+				break // break only if neither file nor file with suffix exist
+			}
 		}
 		n++
 	}

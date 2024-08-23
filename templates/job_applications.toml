@@ -4,7 +4,7 @@ location = "LOCATION"
 role = "ROLE"
 level = "LEVEL"
 skills = ["SKILL1", "SKILL2"]
-remote = REMOTE
+remote = "REMOTE"
 platform = "PLATFORM"
 link = "LINK"
 
@@ -37,15 +37,15 @@ explanation = "EXPLANATION"
 filename = "FILENAME"
 filepath = "FILEPATH"
 
-[company_title]
+[company_title_clear]
 status = "STATUS"
 reason = "REASON"
 
-[job_title]
+[job_title_clear]
 status = "STATUS"
 reason = "REASON"
 
-[required_skills]
+[required_skills_clear]
 status = "STATUS"
 reason = """
 REASON
