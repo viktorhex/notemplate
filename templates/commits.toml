@@ -1,0 +1,16 @@
+[header]
+type = "TYPE"
+scope = "SCOPE"
+description = "DESCRIPTION"
+
+[body]
+content = '''
+BODY
+'''
+
+[[footers]]
+content = '''
+FOOTER
+'''
+
+# https://www.conventionalcommits.org/en/v1.0.0/#summary
