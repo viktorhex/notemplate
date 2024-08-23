@@ -9,22 +9,31 @@ import (
 )
 
 func main() {
+	// expect 2 or less args
 	if len(os.Args) > 3 {
 		fmt.Println("too many args")
 		os.Exit(1)
 	}
+
+	// arg 1
 	var templateName string = ""
 	if len(os.Args) > 1 && os.Args[1] != "_" {
 		templateName = os.Args[1]
 	}
+
+	// arg 2
 	var fileSuffix string = ""
 	if len(os.Args) == 3 {
 		fileSuffix = os.Args[2]
 	}
+
+	// output dir
 	var entriesDir string = "notemplates"
 	if templateName != "" {
 		entriesDir = templateName
 	}
+
+	// try to load content
 	var content string
 	var loadTemplateErr error
 	if templateName != "" {
@@ -42,6 +51,7 @@ func main() {
 		return
 	}
 
+	// create file name
 	currentDate := time.Now().Format("2006-01-02")
 	n := 0
 	var filename string
@@ -49,6 +59,8 @@ func main() {
 	if fileSuffix != "" && fileSuffix != "_" {
 		fileSuffix = "-" + fileSuffix
 	}
+
+	// increment n until a new file name is available
 	for {
 		filename = fmt.Sprintf("%s-entry-%d%s.toml", currentDate, n, fileSuffix)
 		filenameNosuffix := fmt.Sprintf("%s-entry-%d.toml", currentDate, n)
