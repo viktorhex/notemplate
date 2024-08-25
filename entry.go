@@ -40,7 +40,7 @@ func main() {
 		content, loadTemplateErr = loadTemplate(templateName)
 		if loadTemplateErr != nil {
 			fmt.Printf("Error loading template: %v\n", loadTemplateErr)
-			return
+			os.Exit(1)
 		}
 	} else {
 		content = "# Notemplate entry\n"
@@ -54,7 +54,7 @@ func main() {
 	// create file name
 	currentDate := time.Now().Format("2006-01-02")
 	n := 0
-	var filename string
+	var foldername string
 	println(fileSuffix)
 	if fileSuffix != "" && fileSuffix != "_" {
 		fileSuffix = "-" + fileSuffix
@@ -62,10 +62,10 @@ func main() {
 
 	// increment n until a new file name is available
 	for {
-		filename = fmt.Sprintf("%s-entry-%d%s.toml", currentDate, n, fileSuffix)
-		filenameNosuffix := fmt.Sprintf("%s-entry-%d.toml", currentDate, n)
-		fullPath := filepath.Join(entriesDir, filename)
-		fullPathNosuffix := filepath.Join(entriesDir, filenameNosuffix)
+		foldername = fmt.Sprintf("%s-entry-%d%s", currentDate, n, fileSuffix)
+		foldernameNosuffix := fmt.Sprintf("%s-entry-%d", currentDate, n)
+		fullPath := filepath.Join(entriesDir, foldername)
+		fullPathNosuffix := filepath.Join(entriesDir, foldernameNosuffix)
 		if _, err := os.Stat(fullPath); os.IsNotExist(err) {
 			if _, err := os.Stat(fullPathNosuffix); os.IsNotExist(err) {
 				break // break only if neither file nor file with suffix exist
@@ -74,6 +74,51 @@ func main() {
 		n++
 	}
 
+	if err := os.Mkdir(filepath.Join(entriesDir, foldername), 0755); err != nil {
+		println("%s", err.Error())
+		os.Exit(1)
+	}
+
+	if templateName == "job_applications" {
+		filenames := []string{
+			"info.toml",
+			"events.toml",
+		}
+
+		for _, filename := range filenames {
+			dirPath := filepath.Join(entriesDir, foldername)
+			tmplName := filename
+			var text string
+			if filename == "info.toml" {
+				text = content // main template for this already loaded
+			} else {
+				text, loadTemplateErr = loadTemplate(tmplName)
+				if loadTemplateErr != nil {
+					fmt.Printf("Error loading template: %v\n", loadTemplateErr)
+					os.Exit(1)
+				}
+			}
+			createFile(dirPath, filename, text)
+		}
+	} else {
+		dirPath := filepath.Join(entriesDir, foldername)
+		createFile(dirPath, "info.toml", content)
+	}
+}
+
+func loadTemplate(templateName string) (string, error) {
+	templatePath := filepath.Join("templates", templateName)
+	if !strings.HasSuffix(templatePath, ".toml") {
+		templatePath += ".toml"
+	}
+	content, err := os.ReadFile(templatePath)
+	if err != nil {
+		return "", fmt.Errorf("failed to read template file: %v", err)
+	}
+	return string(content), nil
+}
+
+func createFile(entriesDir string, filename string, content string) {
 	fullPath := filepath.Join(entriesDir, filename)
 	file, err := os.Create(fullPath)
 	if err != nil {
@@ -88,16 +133,4 @@ func main() {
 		return
 	}
 	fmt.Printf("Created file: %s\n", fullPath)
-}
-
-func loadTemplate(templateName string) (string, error) {
-	templatePath := filepath.Join("templates", templateName)
-	if !strings.HasSuffix(templatePath, ".toml") {
-		templatePath += ".toml"
-	}
-	content, err := os.ReadFile(templatePath)
-	if err != nil {
-		return "", fmt.Errorf("failed to read template file: %v", err)
-	}
-	return string(content), nil
 }

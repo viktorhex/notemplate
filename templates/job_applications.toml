@@ -13,26 +13,6 @@ date = "DATE"
 kind = "KIND"
 explanation = "EXPLANATION"
 
-[[events]]
-date = "DATE"
-kind = "KIND"
-explanation = "EXPLANATION"
-
-[[events]]
-date = "DATE"
-kind = "KIND"
-explanation = "EXPLANATION"
-
-[[events]]
-date = "DATE"
-kind = "KIND"
-explanation = "EXPLANATION"
-
-[[events]]
-date = "DATE"
-kind = "KIND"
-explanation = "EXPLANATION"
-
 [resume]
 filename = "FILENAME"
 filepath = "FILEPATH"
