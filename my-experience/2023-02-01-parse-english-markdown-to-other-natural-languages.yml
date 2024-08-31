@@ -1,0 +1,32 @@
+---
+task:
+  Implemented parser to translate static website markdown content into other natural languages.
+
+role: IT Consultant
+company: Self-Employed
+start_date: "February 2023"
+end_date: "February 2023" # roughly
+
+tools:
+  - javascript
+  - https://nodejs.org/en
+  - https://www.npmjs.com/package/chevrotain
+  - https://developers.deepl.com/docs
+  - https://cloud.google.com/translate?hl=en
+
+materials:
+  - chevrotain documentation
+  - basic theory on language grammar from this book https://craftinginterpreters.com/
+  - deepl API documentation
+  - google cloud translate API documentation
+
+purpose:
+  To enable a client to reach a wider website audience by offering non-english pages of their website.
+
+safely:
+  Before starting work, I asked my client clarifying questions related to his expectations in terms of features, budget and timeline. Then, during development I created test markdown files in a directory and generated output files that I delivered to my client along with the program source code. This provided both myself and the client confidence that the program met the specified requirements.
+
+summary: |
+  Implemented parser to translate static website markdown content to other natural languages, using Node.js, language grammar concepts, a javascript-based parser generator library, OpenAI API and DeepL API.
+  Produced test fixtures to demonstrate that the program generated expected files.
+  Received feedback from client that they were satisfied with the work and that they'd recommend other clients work with me.

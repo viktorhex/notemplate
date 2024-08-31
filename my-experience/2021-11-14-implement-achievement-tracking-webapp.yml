@@ -1,0 +1,44 @@
+---
+task:
+  Implemented "Technical Achievement Framework" webapp and evangelize product to 50+ engineers within the company.
+
+# Team name: Technical Achievement Framework team 
+# (Solo developer under Dennis Becton for about 6 months until old teammate (Dilpreet/Bakti) was able to join as 2nd teammate)
+role: Application Engineer III
+company: Vanguard
+start_date: "December 2020"
+end_date: "November 2021"
+
+tools:
+  - https://react.dev/
+  - https://www.typescriptlang.org/
+  - https://graphql.org/
+  - https://badgr.com/
+  - https://aws.amazon.com/
+  - https://www.atlassian.com/software/confluence
+  - https://www.atlassian.com/software/jira
+  - https://nodejs.org/en
+  - https://github.com/npm
+  - https://bitbucket.org/product/
+  - https://teams.microsoft.com/
+  - https://www.npmjs.com/package/reactour
+
+materials:
+  - React documentation
+  - TypeScript documentation
+  - Badgr API documentation
+  - GraphQL documentation
+  - Internal SDLC knowledge documentation
+
+purpose:
+  To help technical specialists provide learning pathways for engineers and their managers.
+
+safely: |
+  I implemented and tested features in non-production environments, and held pull-request reviews with teammate.
+
+summary: |
+  With support of management and peers within the company, I led the implementation of a "Technical Achievement Framework" webapp, using React.js, TypeScript, GraphQL, Node.js, and an internal continuous integration / continuous delivery pipeline.
+  I held weekly status meetings on Microsoft Teams to gather interest and volunteer help.
+  I interviewed 60 engineers so I could gather their opinions and critcisms when first using the app.
+  To streamline the onboarding process, I implemented an interactive tour feature that walked engineers through the available features on the webapp.
+  To streamline the feedback gathering process, I implemented a wrapper component which allowed users to click on any feature in the webapp and send me an email with their feedback.

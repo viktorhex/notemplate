@@ -1,0 +1,36 @@
+---
+task:
+  Implement SLI & SLO monitoring for API Gateway, using Splunk, Amazon Lambda and Cloudwatch.
+
+role: Application Engineer I
+company: Vanguard
+start_date: "June 2017"
+end_date: "July 2018"
+
+tools:
+  - Apigee API Gateway
+  - Splunk
+  - Amazon Lambda
+  - Amazon Cloudwatch
+
+materials:
+  - https://docs.apigee.com/api-platform/microgateway/3.1.x/overview-edge-microgateway
+  - https://docs.aws.amazon.com/cloudwatch/
+  - https://www.oreilly.com/library/view/the-site-reliability/9781492029496/
+  - https://docs.splunk.com/
+  - https://aws.amazon.com/pm/cloudformation
+  - https://docs.apigee.com/api-platform/microgateway/2.5.x/develop-custom-plugins
+
+purpose:
+  Improve API platform reliability
+
+safely:
+  To improve API platform reliability safely I started by generating synthetic HTTP traffic in a non-production environment.
+  This allowed the team to gain confidence that the API Gateway instance could handle a certain amount of HTTP traffic while maintaining expected levels of availability.
+  Requested pull request reviews and approvals from teammates and leads.
+
+summary: |
+  Defined Service Level Indicator and Objective definitions for API Gateway HTTP messages by working with peers, reading SRE workbook, and decided on latency, error, and volume metric definitions.
+  Implemented and deployed synthetic http traffic generation by creating Amazon Cloudwatch Events Lambda functions that sent HTTP messages through the API gateway on an interval.
+  Implemented custom Apigee edge microgateway logging plugin to send log events to splunk systems.
+  Implemented splunk dashboards and panels to display status of Service Level Indicators, Service Level Objectives.

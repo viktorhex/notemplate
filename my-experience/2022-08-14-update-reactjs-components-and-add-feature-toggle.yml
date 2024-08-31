@@ -1,0 +1,31 @@
+---
+task:
+  Updated active suite Reactjs UI component to display tenant suite activity and enabled feature toggle.
+
+role: Software Engineer
+company: Dottid
+start_date: "2022-05-01"
+end_date: "2022-08-14"
+
+tools:
+  - https://react.dev/
+  - https://launchdarkly.com/
+  - https://github.com/pnpm/pnpm
+  - https://cloud.google.com/gcp
+  - https://about.gitlab.com/
+
+materials:
+  - Reactjs Documentation
+  - Launch Darkly Documentation
+  - Internal Release and Package Management Knowledge Documentation
+
+purpose:
+  To show activity information in the tenant suite view and to allow the release team to control when the feature was enabled in production.
+
+safely: |
+  I tested this component in non-production environments and then involved teammates to get their approval as well.
+  This involved coordinating changes with teammates and opening a pull request to gather approvals from team members and leads prior to elevating the feature into production, and verifying the team's feature toggle release process.
+
+summary: |
+  Updated Dottid's active suite Reactjs UI component to display tenant suite activity and enabled a Launch Darkly feature toggle integration.
+  Tested the feature in non-production, requested a pull-requrest review process from teammates and gathered approvals for production elevation.

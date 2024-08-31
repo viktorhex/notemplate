@@ -1,0 +1,31 @@
+---
+task:
+  Implement a Discord Cyber Scenario, Quiz, And Cyber Awareness Training Bot, given pseudo code and quiz data files.
+
+role: IT Consultant
+company: Self-Employed
+start_date: "February 2023"
+end_date: "February 2023" # roughly
+
+tools:
+  - https://www.python.org/
+  - https://discordpy.readthedocs.io/en/stable/
+  - https://platform.openai.com/
+
+materials:
+  - discordpy documentation
+  - discord api documentation, for things such as interactive buttons and embedded messages
+  - openai documentation
+
+purpose:
+  To help people learn and practice basic IT and cybersecurity concepts
+
+safely:
+  Before starting work, I asked my client clarifying questions related to his expectations in terms of features, budget and timeline. Then, during development I created test markdown files in a directory and generated output files that I delivered to my client along with the program source code. This provided both myself and the client confidence that the program met the specified requirements.
+
+summary: |
+  Implemented a Discord Cyber Scenario, Quiz, And Cyber Awareness Training Bot from pseudo code and quiz data files.
+  Architected code into modular components by separating main controller logic from backing API services.
+
+result:
+  https://github.com/CyberSentinels/discord-cyber-scenario-bot/

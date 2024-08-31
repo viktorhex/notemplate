@@ -1,0 +1,36 @@
+---
+task:
+  Implemented new header and footer design, accessibility & test coverage, using JS, HTML, and CSS.
+
+# Team name: (C3) Cross Cutting Concerns Team, under Jonathon Presson
+role: Application Engineer II # Developer II was the official title before they changed around titles
+company: Vanguard
+start_date: "July 2018"
+end_date: "June 2020"
+
+tools:
+  - JavaScript
+  - HTML5
+  - CSS3
+  - Internal custom JavaScript UI library
+  - Design assets from Vanguard Design Team
+  - Jest for test suites
+  - Microsoft Teams for team collaboration
+  - Confluence for team notes and knowledge docs
+  - Jira for work ticket management
+  - ServiceNow for change management and deployments
+  - Atlassian Bamboo and Bitbucket for continuous integration and deployment
+  - https://github.com/npm
+
+materials:
+  - Internal SDLC process documentation
+  - Existing custom javascript UI library
+
+purpose:
+  Enable Vanguard's new design on legacy header and footer components while other teams built out their modern design system
+
+safely:
+  Added to and modified test suites as needed to prevent behavior and accessibility regression while updating Vanguard's legacy UI component libraries.
+
+summary: |
+  Implemented new header and footer design, accessibility & test coverage, using JS, HTML, and CSS.

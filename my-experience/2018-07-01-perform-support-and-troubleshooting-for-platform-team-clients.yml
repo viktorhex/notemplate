@@ -1,0 +1,31 @@
+---
+task:
+  Perform support and troubleshooting for platform team clients
+
+role: Application Engineer I
+company: Vanguard
+start_date: "June 2017"
+end_date: "July 2018"
+
+tools:
+  - https://www.atlassian.com/software/jira
+  - https://www.atlassian.com/software/confluence
+  - https://www.atlassian.com/software/bamboo
+  - https://bitbucket.org/product/
+
+materials:
+  - Jira Admin Documentation
+  - Confluence Admin Documentation
+  - Internal knowledge guides
+
+Purpose:
+  To give other platform engineers more time to work on mission critial tasks and to learn about the kind of confusion that customers had.
+
+Safely:
+  To accomplish this safely, I asked clarifying questions to better understand differences between actual field of use and expected field of use for confluence, jira, and API Gateway.
+  I documented as much of my work as I could within help tickets so that there was a papertrail of troubleshooting steps and took care to follow advice from more senior administrators who performed support work before me.
+
+Summary: |
+  Supported API Economy team and Build and Run team by resolving client support requests.
+  Administered new confluence work spaces, new jira projects and workflows, and answered technical questions.
+  Created and improved internal knowledge documentation.

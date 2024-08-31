@@ -1,0 +1,32 @@
+---
+task:
+  Enable data persistance for frontend user settings
+
+role: Software Engineer
+company: Dottid
+start_date: "2022-05-01"
+end_date: "2022-08-14"
+
+tools:
+  - https://react.dev/
+  - https://github.com/pnpm/pnpm
+  - https://cloud.google.com/gcp
+  - https://about.gitlab.com/
+
+materials:
+  - MDN docs such as https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Client-side_storage
+  - Reactjs Documentation
+  - Existing Reactjs codebase
+  - Gitlab Documentation
+  - Internal Pull Request Review, Release and Package Management Knowledge Documentation
+
+purpose:
+  To show activity information in the tenant suite view and to allow the release team to control when the feature was enabled in production.
+
+safely: |
+  I tested this component in non-production environments and then involved teammates to get their approval as well.
+  This involved coordinating changes with teammates and opening a pull request to gather approvals from team members and leads prior to elevating the feature into production, and verifying the team's feature toggle release process.
+
+summary: |
+  Updated Dottid's active suite Reactjs UI component to display tenant suite activity and I enabled a Launch Darkly feature toggle integration.
+  Tested the feature in non-production, requested a review process with teammates, handled feedback, and gathered approvals for production elevation.

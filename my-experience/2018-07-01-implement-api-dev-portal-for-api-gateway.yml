@@ -1,0 +1,37 @@
+---
+task:
+  Create API Dev Portal app to let users search OpenAPI docs using Vuejs, Nuxtjs, & Ant Design
+
+role: Application Engineer I # called Developer I at the time
+company: Vanguard
+start_date: "June 2017"
+end_date: "July 2018"
+
+tools:
+  - https://vuejs.org/
+  - https://nuxt.com/
+  - https://antdv.com/
+  - https://ant.design/
+  - https://react.dev/
+  - https://github.com/npm
+  - https://developer.mozilla.org/en-US/docs/Web/JavaScript
+
+materials:
+  - Vue and Vuex documentation
+  - Nuxt documentation
+  - Ant Design documentation
+  - Reactjs documentation
+  - JavaScript documentation
+  - Internal SDLC and continuous integration and continuous delivery pipeline documentation
+
+purpose:
+  To help Vanguard's Chief Technology Office improve discoverability of APIs and API documentation for teams within Vanguard
+
+safely: |
+  Implemented and tested application in local environments before elevating to cloud environment.
+  Requested pull request reviews and approvals from teammates and leads.
+
+summary: |
+  Implemented API Developer portal that allowed users to search and filter API documentation for CTO's API Economy team.
+  Worked with teammembers, management, and cross-team stakeholders.
+  Created additional documentation to include directions on how to request access to an API and integrate with OAuth credentials.

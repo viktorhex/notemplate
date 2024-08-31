@@ -1,0 +1,26 @@
+---
+task:
+  TASK
+
+role: ROLE
+company: COMPANY
+start_date: "DATE"
+end_date: "DATE"
+
+tools:
+  - TOOL1
+  - TOOL2
+
+materials:
+  - DOCUMENTATION1
+  - BOOK1
+  - HARDWARE1
+
+Purpose:
+  PURPOSE
+
+Safely:
+  SAFELY
+
+Summary: |
+  SUMMARY
