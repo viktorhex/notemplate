@@ -14,8 +14,8 @@ kind = "KIND"
 explanation = "EXPLANATION"
 
 [resume]
-filename = "1-pager-2024-08-16-chris-dillinger.pdf"
-filepath = "/home/c/projects/github.com/1nf053c/notemplate/resumes/pdf/1-pager-2024-08-16-chris-dillinger.pdf"
+filename = "FILENAME"
+filepath = "FILEPATH"
 
 [company_title_clear]
 status = "STATUS"
