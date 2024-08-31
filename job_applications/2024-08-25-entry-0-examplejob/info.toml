@@ -1,0 +1,32 @@
+company_title = "COMPANYTITLE"
+submitted_date = "DATE"
+location = "LOCATION"
+role = "ROLE"
+level = "LEVEL"
+skills = ["SKILL1", "SKILL2"]
+remote = "REMOTE"
+platform = "PLATFORM"
+link = "LINK"
+
+[status]
+date = "DATE"
+kind = "KIND"
+explanation = "EXPLANATION"
+
+[resume]
+filename = "FILENAME"
+filepath = "FILEPATH"
+
+[company_title_clear]
+status = "STATUS"
+reason = "REASON"
+
+[job_title_clear]
+status = "STATUS"
+reason = "REASON"
+
+[required_skills_clear]
+status = "STATUS"
+reason = """
+REASON
+"""

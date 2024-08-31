@@ -1,0 +1,39 @@
+company_title = "eTeam"
+submitted_date = "08/28/2024"
+location = "Remote"
+role = "Software Engineer"
+level = "Intermediate"
+skills = [
+    "Back-End Web Development",
+    "Go (Programming Language)",
+    "Python (Programming Language)",
+    "SQL",
+    "Blockchain",
+    "Cryptocurrency",
+]
+remote = "REMOTE"
+platform = "linkedin"
+link = "https://www.linkedin.com/jobs/view/4004390083/?refId=4fc8a4c5-b549-4a45-8ac3-593195c67ce1&trackingId=DjVOzO8cTJiQzoAmkjX85w%3D%3D"
+
+[resume]
+filename = "1-pager-2024-08-16-chris-dillinger.pdf"
+filepath = "/home/c/projects/github.com/1nf053c/notemplate/resumes/pdf/1-pager-2024-08-16-chris-dillinger.pdf"
+
+[status]
+kind = "waiting"
+date = "08/31/2024"
+explanation = "applied a few days ago, waiting to hear back, position no longer accepting applications"
+
+[company_title_clear]
+status = "ok"
+reason = "Only one title name, however clearly a contract for specific job (they mention 'airflow' in desc, and eTeam is a staffing firm)"
+
+[job_title_clear]
+status = "ok"
+reason = "They leave the role level ambiguous but that might allow them to decide to hire more of a variety of people"
+
+[required_skills_clear]
+status = "ok"
+reason = """
+They list basic tools (python, go, etc), however they lump grpc in with Go skill which I don't think helps anyone - much like how knowing javascript and json doesn't mean you know HTTP.
+"""
