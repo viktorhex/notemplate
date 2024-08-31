@@ -1,0 +1,40 @@
+skills = [
+    "Design, implement and support operational and reliability aspects of large scale Observability & Telemetry collection platform with a focus on performance at scale, real time monitoring, logging and alerting",
+    "Engage in and improve the whole lifecycle of services—from inception and design through deployment, operation and refinement",
+    "Support services before they go live through activities such as system design consulting, developing software tools, platforms and frameworks, capacity management and launch reviews",
+    "Maintain services once they are live by measuring and monitoring availability, latency and overall system health",
+    "Scale systems sustainably through mechanisms like automation, and evolve systems by pushing for changes that improve reliability and velocity",
+    "Practice sustainable incident response and blameless postmortems",
+    "Be part of an on call rotation to support production systems",
+]
+company_title = "NVIDIA"
+submitted_date = "08/31/2024"
+location = "US, WA, Remote"
+role = "Senior Site Reliability Engineer - Observability and Telemetry Platform"
+level = "Senior"
+remote = "REMOTE"
+platform = "https://nvidia.wd5.myworkdayjobs.com/"
+link = "https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/job/Senior-Site-Reliability-Engineer---Observability-and-Telemetry-Platform_JR1986326"
+
+[status]
+date = "08/31/2024"
+kind = "submitted"
+explanation = "visited NVIDIA's official site, submitted on workday"
+
+[resume]
+filename = "1-pager-2024-08-16-chris-dillinger.pdf"
+filepath = "/home/c/projects/github.com/1nf053c/notemplate/resumes/pdf/1-pager-2024-08-16-chris-dillinger.pdf"
+
+[company_title_clear]
+status = "good"
+reason = "clear"
+
+[job_title_clear]
+status = "good"
+reason = "clear"
+
+[required_skills_clear]
+status = "OK"
+reason = """
+Description is light but high level, it's for a senior SRE role so the expectations might be that the SRE candidate has foundations down for these areas.
+"""
