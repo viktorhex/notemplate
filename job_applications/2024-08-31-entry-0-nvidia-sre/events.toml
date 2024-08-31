@@ -1,14 +1,4 @@
 [[events]]
-date = "DATE"
-kind = "KIND"
-explanation = "EXPLANATION"
-
-[[events]]
-date = "DATE"
-kind = "KIND"
-explanation = "EXPLANATION"
-
-[[events]]
-date = "DATE"
-kind = "KIND"
-explanation = "EXPLANATION"
+date = "08/31/2024"
+kind = "submitted"
+explanation = "visited NVIDIA's official site, submitted on workday"
