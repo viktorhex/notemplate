@@ -44,15 +44,15 @@ filename = "1-pager-2024-08-16-chris-dillinger.pdf"
 filepath = "/home/c/projects/github.com/1nf053c/notemate/resumes/pdf/1-pager-2024-08-16-chris-dillinger.pdf"
 
 [company_title_clear]
-status = "STATUS"
-reason = "REASON"
+status = "poor"
+reason = "not listed"
 
 [job_title_clear]
-status = "STATUS"
-reason = "REASON"
+status = "ok"
+reason = "ok"
 
 [required_skills_clear]
-status = "STATUS"
+status = "ok"
 reason = """
-REASON
+ok
 """
