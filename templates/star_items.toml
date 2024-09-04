@@ -1,0 +1,17 @@
+[star_item]
+
+situation = '''
+SITUATION
+'''
+
+task = '''
+TASK
+'''
+
+action = '''
+ACTION
+'''
+
+RESULT = '''
+RESULT
+'''

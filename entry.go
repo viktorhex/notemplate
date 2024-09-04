@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"os"
 	"path/filepath"
@@ -9,35 +10,42 @@ import (
 )
 
 func main() {
-	// expect 2 or less args
-	if len(os.Args) > 3 {
-		fmt.Println("too many args")
-		os.Exit(1)
-	}
+	var template string
+	var suffix string
+	const (
+		templateDefault = ""
+		templateUsage   = "the notes template to create"
+		suffixDefault   = ""
+		suffixUsage     = "text to add to end of created file (or folder)"
+	)
+	flag.StringVar(&template, "template", templateDefault, templateUsage)
+	flag.StringVar(&template, "t", templateDefault, templateUsage+" (shorthand)")
+	flag.StringVar(&suffix, "suffix", suffixDefault, suffixUsage)
+	flag.StringVar(&suffix, "s", suffixDefault, suffixUsage+" (shorthand)")
 
-	// arg 1
-	var templateName string = ""
-	if len(os.Args) > 1 && os.Args[1] != "_" {
-		templateName = os.Args[1]
-	}
+	flag.Parse()
 
-	// arg 2
-	var fileSuffix string = ""
-	if len(os.Args) == 3 {
-		fileSuffix = os.Args[2]
-	}
+	createEntryParams := CreateEntryParams{template, suffix}
+	create_entry(createEntryParams)
+}
+
+type CreateEntryParams struct {
+	template, suffix string
+}
+
+func create_entry(p CreateEntryParams) {
 
 	// output dir
-	var entriesDir string = "notemplates"
-	if templateName != "" {
-		entriesDir = templateName
+	entriesDir := "notemplates"
+	if p.template != "" {
+		entriesDir = p.template
 	}
 
 	// try to load content
-	var content string
+	content := ""
 	var loadTemplateErr error
-	if templateName != "" {
-		content, loadTemplateErr = loadTemplate(templateName)
+	if p.template != "" {
+		content, loadTemplateErr = loadTemplate(p.template)
 		if loadTemplateErr != nil {
 			fmt.Printf("Error loading template: %v\n", loadTemplateErr)
 			os.Exit(1)
@@ -55,14 +63,14 @@ func main() {
 	currentDate := time.Now().Format("2006-01-02")
 	n := 0
 	var foldername string
-	println(fileSuffix)
-	if fileSuffix != "" && fileSuffix != "_" {
-		fileSuffix = "-" + fileSuffix
+	println(p.suffix)
+	if p.suffix != "" && p.suffix != "_" {
+		p.suffix = "-" + p.suffix
 	}
 
 	// increment n until a new file name is available
 	for {
-		foldername = fmt.Sprintf("%s-entry-%d%s", currentDate, n, fileSuffix)
+		foldername = fmt.Sprintf("%s-entry-%d%s", currentDate, n, p.suffix)
 		foldernameNosuffix := fmt.Sprintf("%s-entry-%d", currentDate, n)
 		fullPath := filepath.Join(entriesDir, foldername)
 		fullPathNosuffix := filepath.Join(entriesDir, foldernameNosuffix)
@@ -79,7 +87,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	if templateName == "job_applications" {
+	if p.template == "job_applications" {
 		filenames := []string{
 			"info.toml",
 			"events.toml",

@@ -1,0 +1,45 @@
+[task]
+
+description = '''
+DESCRIPTION
+'''
+
+# Federal Resume Specific Fields
+[fed]
+role = "ROLE"
+company = "COMPANY"
+start_date = "YYYY-MM-DD"
+end_date = "YYYY-MM-DD"
+
+[[tools]]
+url = "URL"
+
+[[tools]]
+url = "URL"
+
+[[materials]]
+url = "URL"
+
+[[materials]]
+url = "URL"
+
+purpose = '''
+PURPOSE
+'''
+
+safely = '''
+SAFELY
+'''
+
+[star]
+situation = '''
+SITUATION
+'''
+
+action = '''
+ACTION
+'''
+
+result = '''
+RESULT
+'''
