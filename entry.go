@@ -4,6 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"os"
+	"path"
 	"path/filepath"
 	"strings"
 	"time"
@@ -53,9 +54,17 @@ func create_entry(p CreateEntryParams) {
 	} else {
 		content = "# Notemplate entry\n"
 	}
-	err := os.MkdirAll(entriesDir, 0755)
-	if err != nil {
-		fmt.Printf("Error creating directory: %v\n", err)
+	docsRoot := "documents"
+
+	err1 := os.MkdirAll(docsRoot, 0755)
+	if err1 != nil {
+		fmt.Printf("Error creating directory: %v\n", err1)
+		return
+	}
+
+	err2 := os.MkdirAll(path.Join(docsRoot, entriesDir), 0755)
+	if err2 != nil {
+		fmt.Printf("Error creating directory: %v\n", err1)
 		return
 	}
 
@@ -72,8 +81,8 @@ func create_entry(p CreateEntryParams) {
 	for {
 		foldername = fmt.Sprintf("%s-entry-%d%s", currentDate, n, p.suffix)
 		foldernameNosuffix := fmt.Sprintf("%s-entry-%d", currentDate, n)
-		fullPath := filepath.Join(entriesDir, foldername)
-		fullPathNosuffix := filepath.Join(entriesDir, foldernameNosuffix)
+		fullPath := filepath.Join(docsRoot, entriesDir, foldername)
+		fullPathNosuffix := filepath.Join(docsRoot, entriesDir, foldernameNosuffix)
 		if _, err := os.Stat(fullPath); os.IsNotExist(err) {
 			if _, err := os.Stat(fullPathNosuffix); os.IsNotExist(err) {
 				break // break only if neither file nor file with suffix exist
@@ -82,7 +91,7 @@ func create_entry(p CreateEntryParams) {
 		n++
 	}
 
-	if err := os.Mkdir(filepath.Join(entriesDir, foldername), 0755); err != nil {
+	if err := os.Mkdir(filepath.Join(docsRoot, entriesDir, foldername), 0755); err != nil {
 		println("%s", err.Error())
 		os.Exit(1)
 	}
@@ -94,7 +103,7 @@ func create_entry(p CreateEntryParams) {
 		}
 
 		for _, filename := range filenames {
-			dirPath := filepath.Join(entriesDir, foldername)
+			dirPath := filepath.Join(docsRoot, entriesDir, foldername)
 			tmplName := filename
 			var text string
 			if filename == "info.toml" {
@@ -109,7 +118,7 @@ func create_entry(p CreateEntryParams) {
 			createFile(dirPath, filename, text)
 		}
 	} else {
-		dirPath := filepath.Join(entriesDir, foldername)
+		dirPath := filepath.Join(docsRoot, entriesDir, foldername)
 		createFile(dirPath, "info.toml", content)
 	}
 }
