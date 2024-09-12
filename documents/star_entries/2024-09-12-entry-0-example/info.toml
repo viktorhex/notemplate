@@ -1,0 +1,48 @@
+situation = '''
+example situation
+'''
+
+purpose = '''
+example purpose
+'''
+
+task = '''
+example task
+'''
+
+action = '''
+example action
+'''
+
+result = '''
+example result
+'''
+
+summarized_sentence = '''
+summarized sentence
+'''
+
+summarized_long_form = '''
+summarized long form
+'''
+
+how_was_quality_assured = '''
+how was quality assured
+'''
+
+role = "ROLE"
+company = "COMPANY"
+start_date = "YYYY-MM-DD"
+end_date = "YYYY-MM-DD"
+
+[[tools]]
+url = "URL"
+
+[[tools]]
+url = "URL"
+
+[[materials]]
+url = "URL"
+
+[[materials]]
+url = "URL"
