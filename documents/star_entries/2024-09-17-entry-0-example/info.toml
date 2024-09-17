@@ -1,0 +1,54 @@
+title = '''
+TITLE
+'''
+
+situation = '''
+SITUATION
+'''
+
+task = '''
+DESCRIPTION
+'''
+
+purpose = '''
+PURPOSE
+'''
+
+action = '''
+ACTION
+'''
+
+result = '''
+RESULT
+'''
+
+summarized_sentence = '''
+SUMMARISED_SENTENCE
+'''
+
+summarized_long_form = '''
+SUMMARISED_LONG_FORM
+'''
+
+how_was_quality_assured = '''
+HOW_WAS_QUALITY_ASSURED
+'''
+
+role = "ROLE"
+company = "COMPANY"
+start_date = "YYYY-MM-DD"
+end_date = "YYYY-MM-DD"
+
+# materials become a part of the product
+[[materials]]
+url = "URL"
+
+[[materials]]
+url = "URL"
+
+# tools manipulate materials in the making of the product
+[[tools]]
+url = "URL"
+
+[[tools]]
+url = "URL"
