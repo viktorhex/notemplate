@@ -1,13 +1,17 @@
+title = '''
+TITLE
+'''
+
 situation = '''
 SITUATION
 '''
 
-purpose = '''
-PURPOSE
-'''
-
 task = '''
 DESCRIPTION
+'''
+
+purpose = '''
+PURPOSE
 '''
 
 action = '''
@@ -35,14 +39,16 @@ company = "COMPANY"
 start_date = "YYYY-MM-DD"
 end_date = "YYYY-MM-DD"
 
-[[tools]]
-url = "URL"
-
-[[tools]]
-url = "URL"
-
+# materials become a part of the product
 [[materials]]
 url = "URL"
 
 [[materials]]
+url = "URL"
+
+# tools manipulate materials in the making of the product
+[[tools]]
+url = "URL"
+
+[[tools]]
 url = "URL"

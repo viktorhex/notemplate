@@ -11,6 +11,7 @@ import (
 )
 
 func main() {
+	fmt.Println("Hello awesome person.")
 	var template string
 	var suffix string
 	const (
@@ -25,6 +26,11 @@ func main() {
 	flag.StringVar(&suffix, "s", suffixDefault, suffixUsage+" (shorthand)")
 
 	flag.Parse()
+
+	if template == "" {
+		fmt.Println("ERR: --template is required (shorthand: -t)")
+		os.Exit(1)
+	}
 
 	createEntryParams := CreateEntryParams{template, suffix}
 	create_entry(createEntryParams)

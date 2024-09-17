@@ -1,0 +1,6 @@
+[transaction]
+date = "YYYY-MM-DD"
+amount = "AMOUNT"
+movement_type = "CREDIT_OR_DEBIT"
+description = "DESCRIPTION"
+# unit of money is USD
