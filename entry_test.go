@@ -18,8 +18,12 @@ func TestCreateEntry(t *testing.T) {
 	// create an entry
 	create_entry(p)
 
+	homeDir, err := os.UserHomeDir()
+	if err != nil {
+		log.Fatal(err)
+	}
 	// the created dir is the same name as the template used
-	dir := "documents/" + template
+	dir := homeDir + "/notemplate/documents/" + template
 
 	// expect first items to be dirs
 	files, err := os.ReadDir(dir)

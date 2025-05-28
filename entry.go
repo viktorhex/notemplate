@@ -1,8 +1,10 @@
 package main
 
 import (
+	"embed"
 	"flag"
 	"fmt"
+	"log"
 	"os"
 	"path"
 	"path/filepath"
@@ -40,6 +42,9 @@ type CreateEntryParams struct {
 	template, suffix string
 }
 
+//go:embed templates/*.toml
+var templates embed.FS
+
 func create_entry(p CreateEntryParams) {
 
 	// output dir
@@ -47,6 +52,23 @@ func create_entry(p CreateEntryParams) {
 	if p.template != "" {
 		entriesDir = p.template
 	}
+
+	homeDir, err := os.UserHomeDir()
+	if err != nil {
+		log.Fatal(err)
+	}
+	templatesRoot := homeDir + "/notemplate/templates"
+	templateFiles := []string{
+		"notes.toml",
+		"star_entries.toml",
+		"research_notes.toml",
+	}
+
+	if err := CopyEmbeddedFilesToFolder(templatesRoot, templateFiles); err != nil {
+		fmt.Printf("Error: %v\n", err)
+		return
+	}
+	fmt.Println("TOML files copied successfully")
 
 	// try to load content
 	content := ""
@@ -60,7 +82,8 @@ func create_entry(p CreateEntryParams) {
 	} else {
 		content = "# Notemplate entry\n"
 	}
-	docsRoot := "documents"
+
+	docsRoot := homeDir + "/notemplate/documents"
 
 	err1 := os.MkdirAll(docsRoot, 0755)
 	if err1 != nil {
@@ -130,7 +153,14 @@ func create_entry(p CreateEntryParams) {
 }
 
 func loadTemplate(templateName string) (string, error) {
-	templatePath := filepath.Join("templates", templateName)
+
+	homeDir, err := os.UserHomeDir()
+	if err != nil {
+		log.Fatal(err)
+	}
+	templatesRoot := homeDir + "/notemplate/templates"
+
+	templatePath := filepath.Join(templatesRoot, templateName)
 	if !strings.HasSuffix(templatePath, ".toml") {
 		templatePath += ".toml"
 	}
@@ -156,4 +186,35 @@ func createFile(entriesDir string, filename string, content string) {
 		return
 	}
 	fmt.Printf("Created file: %s\n", fullPath)
+}
+
+func CopyEmbeddedFilesToFolder(destFolder string, templateNames []string) error {
+	if err := os.MkdirAll(destFolder, 0755); err != nil {
+		return fmt.Errorf("failed to create destination folder: %v", err)
+	}
+
+	for _, templateName := range templateNames {
+		destPath := filepath.Join(destFolder, templateName)
+
+		if _, err := os.Stat(destPath); !os.IsNotExist(err) {
+			continue
+		}
+
+		data, err := templates.ReadFile(filepath.Join("templates", templateName))
+		if err != nil {
+			return fmt.Errorf("failed to read embedded TOML file %s: %v", templateName, err)
+		}
+
+		destFile, err := os.Create(destPath)
+		if err != nil {
+			return fmt.Errorf("failed to create destination file %s: %v", destPath, err)
+		}
+		defer destFile.Close()
+
+		if _, err := destFile.Write(data); err != nil {
+			return fmt.Errorf("failed to write to destination file %s: %v", destPath, err)
+		}
+	}
+
+	return nil
 }
