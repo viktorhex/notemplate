@@ -10,3 +10,5 @@ gitignored
 musings.md
 documents/finances__transactions
 documents/finances__recurring_deposits
+# Added by goreleaser init:
+dist/
