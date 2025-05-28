@@ -10,7 +10,7 @@ import (
 )
 
 func TestCreateEntry(t *testing.T) {
-	// specify an enty template and a suffix
+	// specify an entry template and a suffix
 	template := "__tests"
 	suffix := "examplesuffix"
 	p := CreateEntryParams{template, suffix}
@@ -19,7 +19,7 @@ func TestCreateEntry(t *testing.T) {
 	create_entry(p)
 
 	// the created dir is the same name as the template used
-	dir := template
+	dir := "documents/" + template
 
 	// expect first items to be dirs
 	files, err := os.ReadDir(dir)

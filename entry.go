@@ -11,7 +11,7 @@ import (
 )
 
 func main() {
-	fmt.Println("Hello awesome person.")
+	fmt.Println("notemplate version 1.0")
 	var template string
 	var suffix string
 	const (
